@@ -25,9 +25,9 @@ function freshdb() {
     $conn->query('ALTER TABLE contacts AUTO_INCREMENT = 1');
 
     User::register([
-        'name' => 'Raden',
-        'email' => 'clovemail@fthcapital.com',
-        'password' => 'CloveMail@MailTM'
+        'name' => $_ENV['NAME'],
+        'email' => $_ENV['EMAIL'],
+        'password' => $_ENV['PASSWORD']
     ]);
 
     $contacts = array(
