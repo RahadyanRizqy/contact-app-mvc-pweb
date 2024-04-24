@@ -4,9 +4,7 @@ include_once 'controller/main.php';
 include_once 'function/main.php';
 
 $url = BASEURL . (isset($_GET['url']) ? $_GET['url'] : '');
-$url = explode("/", $url);
-array_splice($url, 0, 4);
-$url = implode("/", $url);
+$url = str_replace(BASEURL, "", $url);
 
 # GET
 route('/', 'get', function () { return view('home'); });
