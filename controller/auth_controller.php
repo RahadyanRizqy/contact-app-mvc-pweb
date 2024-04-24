@@ -30,12 +30,11 @@ class AuthController {
 
     static function saveRegister() {
         $post = array_map('htmlspecialchars', $_POST);
-        $hashedPassword = password_hash($post['password'], PASSWORD_DEFAULT);
 
         $user = User::register([
             'name' => $post['name'], 
             'email' => $post['email'], 
-            'password' => $hashedPassword
+            'password' => $post['password']
         ]);
 
         if ($user) {

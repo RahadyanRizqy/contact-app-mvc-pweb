@@ -1,2 +1,4 @@
 <?php
-define('BASEURL', 'http://localhost/p9/');
+require_once 'env.php';
+
+define('BASEURL', $_ENV['BASEURL']);
