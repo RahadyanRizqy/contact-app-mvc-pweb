@@ -1,0 +1,66 @@
+*, body {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    padding-top: 25px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+footer {
+    clear: both;
+}
+
+.user-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+.card {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card h2 {
+    margin-bottom: 5px;
+}
+
+.admin-card {
+    max-width: 500px;
+}
