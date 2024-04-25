@@ -22,7 +22,7 @@
             <td><?= $c['owner']; ?></td>
             <td>
                 <a href="<?= urlpath("contacts/edit?id=".$c['id']); ?>" class="btn btn-primary">Edit</a>
-                <a href="<?= urlpath("contacts/remove?id".$c['id']); ?>" class="btn btn-danger">Delete</a>
+                <a href="<?= urlpath("contacts/remove?id=".$c['id']); ?>" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     <?php
