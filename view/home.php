@@ -8,8 +8,8 @@
         <hr class="my-4">
         <p class="text-center">Please log in or register to continue.</p>
         <div class="btns d-flex justify-content-center">
-            <a class="btn btn-primary btn-lg mr-2" href="<?= BASEURL.'login'?>" role="button">Login</a>
-            <a class="btn btn-success btn-lg ml-2" href="<?= BASEURL.'register'?>" role="button">Register</a>
+            <a class="btn btn-primary btn-lg mr-2" href="<?= urlpath('login'); ?>" role="button">Login</a>
+            <a class="btn btn-success btn-lg ml-2" href="<?= urlpath('register'); ?>" role="button">Register</a>
         </div>
     </div>
 </div>

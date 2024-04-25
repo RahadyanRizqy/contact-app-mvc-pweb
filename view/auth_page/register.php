@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title text-center">Register for Contact App</h5>
-                    <form action="<?= BASEURL.'register'; ?>" method="POST" enctype="multipart/form-data">
+                    <form action="<?= urlpath('register'); ?>" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name">
@@ -21,7 +21,7 @@
                     </form>
                     <div class="d-flex justify-content-between">
                         <a href="<?=BASEURL?>">Home</a>
-                        <a href="<?=BASEURL?>login">Login</a>
+                        <a href="<?= urlpath('login'); ?>">Login</a>
                     </div>
                 </div>
             </div>

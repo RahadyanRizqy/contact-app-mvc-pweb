@@ -24,7 +24,7 @@ class AuthController {
             header('Location: '.BASEURL.'dashboard');
         }
         else {
-            header('Location: '.BASEURL.'login?auth=false');
+            header('Location: '.BASEURL.'login?failed=true');
         }
     }
 

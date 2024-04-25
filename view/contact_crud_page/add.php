@@ -2,7 +2,7 @@
 <div class="admin-card">
     <div class="card mt-3">
         <div class="card-body">
-            <form action="<?=BASEURL?>contacts/add" method="POST" enctype="multipart/form-data">
+            <form action="<?= urlpath("contacts/add"); ?>" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="phone_number">Phone Number:</label>
                     <input type="text" name="phone_number" id="phone_number" class="form-control" placeholder="081234567890">

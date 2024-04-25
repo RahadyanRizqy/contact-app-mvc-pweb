@@ -30,11 +30,6 @@ class ContactController {
                 header('Location: '.BASEURL.'dashboard/contacts');
             }
             else {
-                // view('dash_page/layout', [
-                //     'url' => 'view/contact_crud_page/add', 
-                //     'user' => $_SESSION['user'],
-                //     'error' => 'Error menambahkan data'
-                // ]);
                 header('Location: '.BASEURL.'contacts/add?addFailed=true');
             }
         }
@@ -69,10 +64,6 @@ class ContactController {
                 header('Location: '.BASEURL.'dashboard/contacts');
             }
             else {
-                // view('dash_page/layout', [
-                //     'url' => 'view/contact_crud_page/edit', 
-                //     'error' => 'Error menambahkan data'
-                // ]);
                 header('Location: '.BASEURL.'contacts/edit?id='.$_GET['id'].'&editFailed=true');
             }
         }
@@ -89,10 +80,6 @@ class ContactController {
                 header('Location: '.BASEURL.'dashboard/contacts');
             }
             else {
-                // view('dash_page/layout', [
-                //     'url' => 'contacts', 
-                //     'error' => 'Error menambahkan data'
-                // ]);
                 header('Location: '.BASEURL.'dashboard/contacts?removeFailed=true');
             }
         }

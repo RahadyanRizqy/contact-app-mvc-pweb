@@ -48,13 +48,12 @@ class Contact {
     static function delete($id='') {
         global $conn;
         $result = '';
-        if ($id != '') {
-            $sql = 'DELETE FROM contacts';
-
+        $deleted_at = date('Y-m-d H:i:s', strtotime('now'));
+        if ($id == '') {
+            $sql = "UPDATE contacts SET deleted_at = '$deleted_at'";
             $result = $conn->query($sql);
         }
         else {
-            $deleted_at = date('Y-m-d H:i:s', strtotime('now'));
             $sql = "UPDATE contacts SET deleted_at = ? WHERE id = ?";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('si', $deleted_at, $id);

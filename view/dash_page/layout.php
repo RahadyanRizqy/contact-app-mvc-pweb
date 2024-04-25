@@ -25,16 +25,16 @@
     <h3 class="px-3">Contact App</h3>
     <ul class="mt-5 px-2">
         <li>
-            <a href="<?= BASEURL.'dashboard'; ?>">Dashboard</a>
+            <a href="<?= urlpath('dashboard'); ?>">Dashboard</a>
         </li>
         <li>
-            <a href="<?= BASEURL.'dashboard/contacts'; ?>">Contacts</a>
+            <a href="<?= urlpath('dashboard/contacts'); ?>">Contacts</a>
         </li>
         <li>
-            <a href="<?= BASEURL.'dashboard/admin'; ?>">Admin</a>
+            <a href="<?= urlpath('dashboard/admin'); ?>">Admin</a>
         </li>
         <li>
-            <a href="<?= BASEURL.'dashboard/logout'; ?>">Logout</a>
+            <a href="<?= urlpath('dashboard/logout'); ?>">Logout</a>
         </li>
     </ul>
 </aside>

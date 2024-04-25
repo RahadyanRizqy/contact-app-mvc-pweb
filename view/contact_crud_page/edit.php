@@ -2,7 +2,7 @@
 <div class="admin-card">
     <div class="card mt-3">
         <div class="card-body">
-            <form action="<?=BASEURL?>contacts/edit?id=<?= $contact[0]['id'] ?>" method="POST" enctype="multipart/form-data">
+            <form action="<?= urlpath("contacts/edit?id=".$contact[0]['id']); ?>" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="phone_number">Phone Number:</label>
                     <input type="text" name="phone_number" id="phone_number" class="form-control" placeholder="081234567890" value="<?= $contact[0]['phone_number'] ?>">

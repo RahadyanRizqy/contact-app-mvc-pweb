@@ -7,12 +7,15 @@ function view($page, $data=[]) {
 $urls = [];
 function route($url, $method, $callback) {
     global $urls;
-    if ($url == '/') {
-        $url = '';
-    }
+    if ($url == '/') { $url = ''; }
     $urls[strtoupper($method)][$url] = $callback;
     $urls['routes'][] = $url;
     $urls['routes'] = array_unique($urls['routes']);
+}
+
+function urlpath($path) {
+    require_once 'config/static.php';
+    return BASEURL.$path;
 }
 
 function freshdb() {
@@ -52,4 +55,5 @@ function freshdb() {
                 ]);
     }
     view('freshdb');
+    session_destroy();
 }
