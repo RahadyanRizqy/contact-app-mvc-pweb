@@ -3,16 +3,13 @@ include_once 'config/static.php';
 include_once 'controller/main.php';
 include_once 'function/main.php';
 
-// $url = BASEURL . (isset($_GET['url']) ? $_GET['url'] : '');
-// $url = str_replace(BASEURL, "", $url);
-
 $url = implode("/", 
-            array_values(
-                array_filter(
-                    explode("/", str_replace('contact-app', "", parse_url($_SERVER['REQUEST_URI'])['path'])), function($element) { 
-                        return $element !== ""; 
-                    }
-                )
+            array_filter(
+                explode("/", 
+                    str_replace($_ENV['BASEDIR'], "", 
+                        parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+                    )
+                ), 'strlen'
             )
         );
 
