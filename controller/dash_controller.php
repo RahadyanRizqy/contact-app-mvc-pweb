@@ -9,7 +9,10 @@ class DashboardController {
             exit;
         }
         else {
-            view('dash_page/layout', ['url' => 'home']);
+            view('dash_page/layout', [
+                'url' => 'home',
+                'statistic' => Contact::rawQuery("SELECT COUNT(c1.id) as user_count, c2.city as user_city FROM contacts as c1, cities as c2 WHERE c1.city_fk = c2.id GROUP BY user_city;")
+            ]);
         }
     }
 

@@ -6,23 +6,15 @@
 
 <script>
   const ctx = document.getElementById('myChart');
-
   new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: <?= $statistic['user_city']; ?>,
       datasets: [{
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: <? $statistic['user_count']; ?>,
         borderWidth: 1
       }]
     },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
   });
 </script>
