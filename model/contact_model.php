@@ -22,9 +22,9 @@ class Contact {
         extract($data);
         global $conn;
         $inserted_at = date('Y-m-d H:i:s', strtotime('now'));
-        $sql = "INSERT INTO contacts SET phone_number = ?, owner = ?, inserted_at = ?, user_fk = ?";
+        $sql = "INSERT INTO contacts SET phone_number = ?, owner = ?, inserted_at = ?, user_fk = ?, city_fk = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sssi', $phone_number, $owner, $inserted_at, $user_fk);
+        $stmt->bind_param('sssii', $phone_number, $owner, $inserted_at, $user_fk, $city_fk);
         $stmt->execute();
 
         $result = $stmt->affected_rows > 0 ? true : false;

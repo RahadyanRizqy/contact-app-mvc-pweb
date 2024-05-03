@@ -25,9 +25,6 @@ $user_count = [];
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  function printPage() {
-    window.print(); // Prompt the user to print the page
-  }
   const ctx = document.getElementById('myChart');
   const labels = <?= json_encode($user_city); ?>;
   const data = <?= json_encode($user_count); ?>;
