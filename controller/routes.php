@@ -15,6 +15,7 @@ Router::url('contacts/add', 'get', 'ContactController::add');
 Router::url('contacts/edit', 'get', 'ContactController::edit');
 Router::url('contacts/remove', 'get', 'ContactController::remove');
 Router::url('freshdb', 'get', 'freshdb');
+Router::url('report', 'get', 'ContactController::report');
 
 # POST
 Router::url('login', 'post', 'AuthController::saveLogin');

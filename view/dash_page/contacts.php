@@ -6,6 +6,7 @@
             <th>No</th>
             <th>Phone Number</th>
             <th>Owner</th>
+            <th>City</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -20,6 +21,7 @@
             <td><?= $i ?></td>
             <td><?= $c['phone_number']; ?></td>
             <td><?= $c['owner']; ?></td>
+            <td><?= $c['city']; ?></td>
             <td>
                 <a href="<?= urlpath("contacts/edit?id=".$c['id']); ?>" class="btn btn-primary">Edit</a>
                 <a href="<?= urlpath("contacts/remove?id=".$c['id']); ?>" class="btn btn-danger">Delete</a>
