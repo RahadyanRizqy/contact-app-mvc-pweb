@@ -14,6 +14,7 @@
                 <div class="form-group">
                     <label for="city">Cities:</label>
                     <select name="city" id="city">
+                        <option value="0">Select city:</option>
                         <?php
                             for ($i = 0; $i < count($cities); $i++) {
                         ?>

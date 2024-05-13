@@ -35,9 +35,9 @@ class Contact {
         extract($data);
         global $conn;
         $updated_at = date('Y-m-d H:i:s', strtotime('now'));
-        $sql = "UPDATE contacts SET phone_number = ?, owner = ?, updated_at = ? WHERE id = ?";
+        $sql = "UPDATE contacts SET phone_number = ?, owner = ?, updated_at = ?, city_fk = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sssi', $phone_number, $owner, $updated_at, $id);
+        $stmt->bind_param('ssssi', $phone_number, $owner, $updated_at, $city_fk, $id);
         $stmt->execute();
 
         $result = $stmt->affected_rows > 0 ? true : false;

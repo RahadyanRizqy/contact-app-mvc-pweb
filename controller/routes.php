@@ -25,6 +25,6 @@ Router::url('contacts/edit', 'post', 'ContactController::saveEdit');
 
 
 # API GET
-Router::url('contacts/listcities', 'get', 'ContactController::listCities');
+Router::url('outside', 'get', 'ContactController::api');
 
 new Router();

@@ -26,7 +26,8 @@ class ContactController {
             $contact = Contact::insert([
                 'phone_number' => $post['phone_number'], 
                 'owner' => $post['owner'],
-                'user_fk' => $_SESSION['user']['id']
+                'user_fk' => $_SESSION['user']['id'],
+                'city_fk' => $post['city']
             ]);
             
             if ($contact) {
@@ -62,7 +63,8 @@ class ContactController {
             $contact = Contact::update([
                 'id' => $_GET['id'],
                 'phone_number' => $post['phone_number'],
-                'owner' => $post['owner']
+                'owner' => $post['owner'],
+                'city_fk' => $post['city']
             ]);
             if ($contact) {
                 header('Location: '.BASEURL.'dashboard/contacts');
@@ -105,19 +107,14 @@ class ContactController {
         }
     }
 
-    static function listCities() {
-        if (!isset($_SESSION['user'])) {
-            header('Location: '.BASEURL.'login?auth=false');
-            exit;
-        }
-        else {
-            $cities = Contact::rawQuery("SELECT id, city FROM cities");
-            if ($cities) {
-                echo json_encode($cities);
-            }
-            else {
-                echo "no_data";
-            }
+    static function api() {
+        $url = 'https://api.coinlore.net/api/tickers/';
+        $json = file_get_contents($url);
+        $data = json_decode($json, true);
+        if ($data === null && json_last_error() !== JSON_ERROR_NONE) {
+            echo "Error decoding JSON: " . json_last_error_msg();
+        } else {
+            var_dump($data['data'][0]['id']);
         }
     }
 }
