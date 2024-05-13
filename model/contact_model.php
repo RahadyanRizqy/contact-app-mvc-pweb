@@ -74,7 +74,6 @@ class Contact {
             }
         }
         $result->free();
-        $conn->close();
         return $rows;
     }
 }

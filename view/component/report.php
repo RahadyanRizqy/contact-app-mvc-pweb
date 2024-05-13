@@ -19,6 +19,20 @@ foreach ($contacts as $c) {
         }
         .chart {
             width: 35%;
+            height: 1000px;
+            margin: auto;
+        }
+
+        @media print {
+            .result {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+            .chart {
+                width: 70%;
+                margin: auto;
+            }
         }
     </style>
 </head>
@@ -53,6 +67,7 @@ foreach ($contacts as $c) {
     });
 
     window.onload = function() {
-        window.print(); // Automatically initiate print when the page is loaded
+        window.print();
     }
 </script>
+</html>

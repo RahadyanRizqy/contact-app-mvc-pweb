@@ -9,7 +9,10 @@ class ContactController {
             exit;
         }
         else {
-            view('dash_page/layout', ['url' => 'view/contact_crud_page/add']);
+            view('dash_page/layout', [
+                'url' => 'view/contact_crud_page/add',
+                'cities' => Contact::rawQuery("SELECT id, city FROM cities")
+            ]);
         }
     }
 
@@ -43,7 +46,8 @@ class ContactController {
         else {
             view('dash_page/layout', [
                 'url' => 'view/contact_crud_page/edit',
-                'contact' => Contact::select($_GET['id'])
+                'contact' => Contact::rawQuery("SELECT c1.id as id, c1.phone_number as phone_number, c1.owner as owner, c2.city as user_city, c2.id as city_fk FROM contacts as c1, cities as c2 WHERE c1.id = ". $_GET['id'] ." AND c1.city_fk = c2.id"),
+                'cities' => Contact::rawQuery("SELECT id, city FROM cities")
             ]);
         }
     }
@@ -97,6 +101,22 @@ class ContactController {
             }
             else {
                 header('Location: '.BASEURL.'dashboard/contacts?removeFailed=true');
+            }
+        }
+    }
+
+    static function listCities() {
+        if (!isset($_SESSION['user'])) {
+            header('Location: '.BASEURL.'login?auth=false');
+            exit;
+        }
+        else {
+            $cities = Contact::rawQuery("SELECT id, city FROM cities");
+            if ($cities) {
+                echo json_encode($cities);
+            }
+            else {
+                echo "no_data";
             }
         }
     }

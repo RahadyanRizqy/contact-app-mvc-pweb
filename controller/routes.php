@@ -23,4 +23,8 @@ Router::url('register', 'post', 'AuthController::saveRegister');
 Router::url('contacts/add', 'post', 'ContactController::saveAdd');
 Router::url('contacts/edit', 'post', 'ContactController::saveEdit');
 
+
+# API GET
+Router::url('contacts/listcities', 'get', 'ContactController::listCities');
+
 new Router();
